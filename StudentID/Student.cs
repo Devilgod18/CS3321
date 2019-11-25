@@ -26,6 +26,8 @@ namespace StudentLogin
 
         private void Student_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'studentDataSet3.StudentInfo' table. You can move, or remove it, as needed.
+            this.studentInfoTableAdapter1.Fill(this.studentDataSet3.StudentInfo);
             this.studentInfoTableAdapter.Fill(this.studentDataSet.StudentInfo);
 
 

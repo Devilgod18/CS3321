@@ -80,6 +80,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>studentDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="studentDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>studentDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="studentDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>studentDataSet3.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +139,28 @@
     </None>
     <None Include="studentDataSet1.xss">
       <DependentUpon>studentDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="studentDataSet2.xsc">
+      <DependentUpon>studentDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="studentDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>studentDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="studentDataSet2.xss">
+      <DependentUpon>studentDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="studentDataSet3.xsc">
+      <DependentUpon>studentDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="studentDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>studentDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="studentDataSet3.xss">
+      <DependentUpon>studentDataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
