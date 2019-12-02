@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,19 +74,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>studentDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="studentDataSet2.Designer.cs">
+    <Compile Include="studentDataSet21.cs">
+      <DependentUpon>studentDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="studentDataSet21.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>studentDataSet2.xsd</DependentUpon>
+      <DependentUpon>studentDataSet21.xsd</DependentUpon>
     </Compile>
-    <Compile Include="studentDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>studentDataSet3.xsd</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,39 +129,28 @@
     <None Include="studentDataSet1.xss">
       <DependentUpon>studentDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="studentDataSet2.xsc">
-      <DependentUpon>studentDataSet2.xsd</DependentUpon>
+    <None Include="studentDataSet21.xsc">
+      <DependentUpon>studentDataSet21.xsd</DependentUpon>
     </None>
-    <None Include="studentDataSet2.xsd">
+    <None Include="studentDataSet21.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>studentDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>studentDataSet21.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="studentDataSet2.xss">
-      <DependentUpon>studentDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="studentDataSet3.xsc">
-      <DependentUpon>studentDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="studentDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>studentDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="studentDataSet3.xss">
-      <DependentUpon>studentDataSet3.xsd</DependentUpon>
+    <None Include="studentDataSet21.xss">
+      <DependentUpon>studentDataSet21.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="student.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

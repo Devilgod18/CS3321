@@ -26,8 +26,11 @@ namespace StudentLogin
 
         private void Student_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'studentDataSet3.StudentInfo' table. You can move, or remove it, as needed.
-            this.studentInfoTableAdapter1.Fill(this.studentDataSet3.StudentInfo);
+            // TODO: This line of code loads data into the 'studentDataSet2.Grade' table. You can move, or remove it, as needed.
+            this.gradeTableAdapter.Fill(this.studentDataSet2.Grade);
+            // TODO: This line of code loads data into the 'studentDataSet2.StudentInfo' table. You can move, or remove it, as needed.
+            this.studentInfoTableAdapter2.Fill(this.studentDataSet2.StudentInfo);
+            
             this.studentInfoTableAdapter.Fill(this.studentDataSet.StudentInfo);
 
 
@@ -42,8 +45,8 @@ namespace StudentLogin
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                studentInfoBindingSource.EndEdit();
-                studentInfoTableAdapter.Update(this.studentDataSet.StudentInfo);
+                studentInfoBindingSource4.EndEdit();
+                studentInfoTableAdapter2.Update(this.studentDataSet2.StudentInfo);
                 MessageBox.Show("Save success.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -56,14 +59,7 @@ namespace StudentLogin
 
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Form1 a = new Form1 ();
-            a.ShowDialog();
-            
-
-            
-        }
+        
 
         
     }

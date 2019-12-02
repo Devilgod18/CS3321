@@ -228,7 +228,7 @@ namespace StudentID {
         private void InitClass() {
             this.DataSetName = "studentDataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/studentDataSet2.xsd";
+            this.Namespace = "http://tempuri.org/studentDataSet21.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableGrade = new GradeDataTable();

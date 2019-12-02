@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="studentDataSet2" targetNamespace="http://tempuri.org/studentDataSet2.xsd" xmlns:mstns="http://tempuri.org/studentDataSet2.xsd" xmlns="http://tempuri.org/studentDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="studentDataSet4" targetNamespace="http://tempuri.org/studentDataSet4.xsd" xmlns:mstns="http://tempuri.org/studentDataSet4.xsd" xmlns="http://tempuri.org/studentDataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -143,7 +143,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="studentDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="studentDataSet2" msprop:Generator_UserDSName="studentDataSet2">
+  <xs:element name="studentDataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="studentDataSet4" msprop:Generator_UserDSName="studentDataSet4">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Grade" msprop:Generator_TableClassName="GradeDataTable" msprop:Generator_TableVarName="tableGrade" msprop:Generator_TablePropName="Grade" msprop:Generator_RowDeletingName="GradeRowDeleting" msprop:Generator_RowChangingName="GradeRowChanging" msprop:Generator_RowEvHandlerName="GradeRowChangeEventHandler" msprop:Generator_RowDeletedName="GradeRowDeleted" msprop:Generator_UserTableName="Grade" msprop:Generator_RowChangedName="GradeRowChanged" msprop:Generator_RowEvArgName="GradeRowChangeEvent" msprop:Generator_RowClassName="GradeRow">

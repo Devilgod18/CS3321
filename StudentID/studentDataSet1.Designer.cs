@@ -24,7 +24,7 @@ namespace StudentID {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class studentDataSet1 : global::System.Data.DataSet {
         
-        private GradeDataTable tableGrade;
+        private StudentInfoDataTable tableStudentInfo;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace StudentID {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Grade"] != null)) {
-                    base.Tables.Add(new GradeDataTable(ds.Tables["Grade"]));
+                if ((ds.Tables["StudentInfo"] != null)) {
+                    base.Tables.Add(new StudentInfoDataTable(ds.Tables["StudentInfo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace StudentID {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GradeDataTable Grade {
+        public StudentInfoDataTable StudentInfo {
             get {
-                return this.tableGrade;
+                return this.tableStudentInfo;
             }
         }
         
@@ -152,8 +152,8 @@ namespace StudentID {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Grade"] != null)) {
-                    base.Tables.Add(new GradeDataTable(ds.Tables["Grade"]));
+                if ((ds.Tables["StudentInfo"] != null)) {
+                    base.Tables.Add(new StudentInfoDataTable(ds.Tables["StudentInfo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace StudentID {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableGrade = ((GradeDataTable)(base.Tables["Grade"]));
+            this.tableStudentInfo = ((StudentInfoDataTable)(base.Tables["StudentInfo"]));
             if ((initTable == true)) {
-                if ((this.tableGrade != null)) {
-                    this.tableGrade.InitVars();
+                if ((this.tableStudentInfo != null)) {
+                    this.tableStudentInfo.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace StudentID {
             this.Namespace = "http://tempuri.org/studentDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableGrade = new GradeDataTable();
-            base.Tables.Add(this.tableGrade);
+            this.tableStudentInfo = new StudentInfoDataTable();
+            base.Tables.Add(this.tableStudentInfo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeGrade() {
+        private bool ShouldSerializeStudentInfo() {
             return false;
         }
         
@@ -270,29 +270,37 @@ namespace StudentID {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void GradeRowChangeEventHandler(object sender, GradeRowChangeEvent e);
+        public delegate void StudentInfoRowChangeEventHandler(object sender, StudentInfoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GradeDataTable : global::System.Data.TypedTableBase<GradeRow> {
+        public partial class StudentInfoDataTable : global::System.Data.TypedTableBase<StudentInfoRow> {
             
-            private global::System.Data.DataColumn columnCourses_1;
-            
-            private global::System.Data.DataColumn columnCourses_2;
-            
-            private global::System.Data.DataColumn columnCourses_3;
-            
-            private global::System.Data.DataColumn columnCourses_4;
+            private global::System.Data.DataColumn columnID;
             
             private global::System.Data.DataColumn columnStudentID;
             
+            private global::System.Data.DataColumn columnStudentName;
+            
+            private global::System.Data.DataColumn columnMajor;
+            
+            private global::System.Data.DataColumn columnCourse1;
+            
+            private global::System.Data.DataColumn columnCourse_2;
+            
+            private global::System.Data.DataColumn columnCourse_3;
+            
+            private global::System.Data.DataColumn columnCourse_4;
+            
+            private global::System.Data.DataColumn columnAverage;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GradeDataTable() {
-                this.TableName = "Grade";
+            public StudentInfoDataTable() {
+                this.TableName = "StudentInfo";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +308,7 @@ namespace StudentID {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal GradeDataTable(global::System.Data.DataTable table) {
+            internal StudentInfoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,40 +325,16 @@ namespace StudentID {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected GradeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected StudentInfoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Courses_1Column {
+            public global::System.Data.DataColumn IDColumn {
                 get {
-                    return this.columnCourses_1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Courses_2Column {
-                get {
-                    return this.columnCourses_2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Courses_3Column {
-                get {
-                    return this.columnCourses_3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Courses_4Column {
-                get {
-                    return this.columnCourses_4;
+                    return this.columnID;
                 }
             }
             
@@ -359,6 +343,62 @@ namespace StudentID {
             public global::System.Data.DataColumn StudentIDColumn {
                 get {
                     return this.columnStudentID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StudentNameColumn {
+                get {
+                    return this.columnStudentName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MajorColumn {
+                get {
+                    return this.columnMajor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Course1Column {
+                get {
+                    return this.columnCourse1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Course_2Column {
+                get {
+                    return this.columnCourse_2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Course_3Column {
+                get {
+                    return this.columnCourse_3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Course_4Column {
+                get {
+                    return this.columnCourse_4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AverageColumn {
+                get {
+                    return this.columnAverage;
                 }
             }
             
@@ -373,56 +413,60 @@ namespace StudentID {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GradeRow this[int index] {
+            public StudentInfoRow this[int index] {
                 get {
-                    return ((GradeRow)(this.Rows[index]));
+                    return ((StudentInfoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event GradeRowChangeEventHandler GradeRowChanging;
+            public event StudentInfoRowChangeEventHandler StudentInfoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event GradeRowChangeEventHandler GradeRowChanged;
+            public event StudentInfoRowChangeEventHandler StudentInfoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event GradeRowChangeEventHandler GradeRowDeleting;
+            public event StudentInfoRowChangeEventHandler StudentInfoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event GradeRowChangeEventHandler GradeRowDeleted;
+            public event StudentInfoRowChangeEventHandler StudentInfoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddGradeRow(GradeRow row) {
+            public void AddStudentInfoRow(StudentInfoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GradeRow AddGradeRow(string Courses_1, string Courses_2, string Courses_3, string Courses_4, string StudentID) {
-                GradeRow rowGradeRow = ((GradeRow)(this.NewRow()));
+            public StudentInfoRow AddStudentInfoRow(string StudentID, string StudentName, string Major, int Course1, int Course_2, int Course_3, int Course_4, double Average) {
+                StudentInfoRow rowStudentInfoRow = ((StudentInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Courses_1,
-                        Courses_2,
-                        Courses_3,
-                        Courses_4,
-                        StudentID};
-                rowGradeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGradeRow);
-                return rowGradeRow;
+                        null,
+                        StudentID,
+                        StudentName,
+                        Major,
+                        Course1,
+                        Course_2,
+                        Course_3,
+                        Course_4,
+                        Average};
+                rowStudentInfoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowStudentInfoRow);
+                return rowStudentInfoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GradeRow FindByStudentID(string StudentID) {
-                return ((GradeRow)(this.Rows.Find(new object[] {
-                            StudentID})));
+            public StudentInfoRow FindByID(int ID) {
+                return ((StudentInfoRow)(this.Rows.Find(new object[] {
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GradeDataTable cln = ((GradeDataTable)(base.Clone()));
+                StudentInfoDataTable cln = ((StudentInfoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -430,67 +474,80 @@ namespace StudentID {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GradeDataTable();
+                return new StudentInfoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnCourses_1 = base.Columns["Courses 1"];
-                this.columnCourses_2 = base.Columns["Courses 2"];
-                this.columnCourses_3 = base.Columns["Courses 3"];
-                this.columnCourses_4 = base.Columns["Courses 4"];
+                this.columnID = base.Columns["ID"];
                 this.columnStudentID = base.Columns["StudentID"];
+                this.columnStudentName = base.Columns["StudentName"];
+                this.columnMajor = base.Columns["Major"];
+                this.columnCourse1 = base.Columns["Course1"];
+                this.columnCourse_2 = base.Columns["Course 2"];
+                this.columnCourse_3 = base.Columns["Course 3"];
+                this.columnCourse_4 = base.Columns["Course 4"];
+                this.columnAverage = base.Columns["Average"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCourses_1 = new global::System.Data.DataColumn("Courses 1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCourses_1);
-                this.columnCourses_2 = new global::System.Data.DataColumn("Courses 2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCourses_2);
-                this.columnCourses_3 = new global::System.Data.DataColumn("Courses 3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCourses_3);
-                this.columnCourses_4 = new global::System.Data.DataColumn("Courses 4", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCourses_4);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.columnStudentID = new global::System.Data.DataColumn("StudentID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStudentID);
+                this.columnStudentName = new global::System.Data.DataColumn("StudentName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudentName);
+                this.columnMajor = new global::System.Data.DataColumn("Major", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMajor);
+                this.columnCourse1 = new global::System.Data.DataColumn("Course1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCourse1);
+                this.columnCourse_2 = new global::System.Data.DataColumn("Course 2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCourse_2);
+                this.columnCourse_3 = new global::System.Data.DataColumn("Course 3", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCourse_3);
+                this.columnCourse_4 = new global::System.Data.DataColumn("Course 4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCourse_4);
+                this.columnAverage = new global::System.Data.DataColumn("Average", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAverage);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnStudentID}, true));
-                this.columnCourses_1.MaxLength = 255;
-                this.columnCourses_2.MaxLength = 255;
-                this.columnCourses_3.MaxLength = 255;
-                this.columnCourses_4.MaxLength = 255;
-                this.columnStudentID.AllowDBNull = false;
-                this.columnStudentID.Unique = true;
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
                 this.columnStudentID.MaxLength = 255;
+                this.columnStudentName.MaxLength = 255;
+                this.columnMajor.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GradeRow NewGradeRow() {
-                return ((GradeRow)(this.NewRow()));
+            public StudentInfoRow NewStudentInfoRow() {
+                return ((StudentInfoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GradeRow(builder);
+                return new StudentInfoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GradeRow);
+                return typeof(StudentInfoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GradeRowChanged != null)) {
-                    this.GradeRowChanged(this, new GradeRowChangeEvent(((GradeRow)(e.Row)), e.Action));
+                if ((this.StudentInfoRowChanged != null)) {
+                    this.StudentInfoRowChanged(this, new StudentInfoRowChangeEvent(((StudentInfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -498,8 +555,8 @@ namespace StudentID {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GradeRowChanging != null)) {
-                    this.GradeRowChanging(this, new GradeRowChangeEvent(((GradeRow)(e.Row)), e.Action));
+                if ((this.StudentInfoRowChanging != null)) {
+                    this.StudentInfoRowChanging(this, new StudentInfoRowChangeEvent(((StudentInfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -507,8 +564,8 @@ namespace StudentID {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GradeRowDeleted != null)) {
-                    this.GradeRowDeleted(this, new GradeRowChangeEvent(((GradeRow)(e.Row)), e.Action));
+                if ((this.StudentInfoRowDeleted != null)) {
+                    this.StudentInfoRowDeleted(this, new StudentInfoRowChangeEvent(((StudentInfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -516,14 +573,14 @@ namespace StudentID {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GradeRowDeleting != null)) {
-                    this.GradeRowDeleting(this, new GradeRowChangeEvent(((GradeRow)(e.Row)), e.Action));
+                if ((this.StudentInfoRowDeleting != null)) {
+                    this.StudentInfoRowDeleting(this, new StudentInfoRowChangeEvent(((StudentInfoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveGradeRow(GradeRow row) {
+            public void RemoveStudentInfoRow(StudentInfoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -550,7 +607,7 @@ namespace StudentID {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GradeDataTable";
+                attribute2.FixedValue = "StudentInfoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -594,78 +651,25 @@ namespace StudentID {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GradeRow : global::System.Data.DataRow {
+        public partial class StudentInfoRow : global::System.Data.DataRow {
             
-            private GradeDataTable tableGrade;
+            private StudentInfoDataTable tableStudentInfo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal GradeRow(global::System.Data.DataRowBuilder rb) : 
+            internal StudentInfoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGrade = ((GradeDataTable)(this.Table));
+                this.tableStudentInfo = ((StudentInfoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Courses_1 {
+            public int ID {
                 get {
-                    try {
-                        return ((string)(this[this.tableGrade.Courses_1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Courses 1\' in table \'Grade\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableStudentInfo.IDColumn]));
                 }
                 set {
-                    this[this.tableGrade.Courses_1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Courses_2 {
-                get {
-                    try {
-                        return ((string)(this[this.tableGrade.Courses_2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Courses 2\' in table \'Grade\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGrade.Courses_2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Courses_3 {
-                get {
-                    try {
-                        return ((string)(this[this.tableGrade.Courses_3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Courses 3\' in table \'Grade\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGrade.Courses_3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Courses_4 {
-                get {
-                    try {
-                        return ((string)(this[this.tableGrade.Courses_4Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Courses 4\' in table \'Grade\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGrade.Courses_4Column] = value;
+                    this[this.tableStudentInfo.IDColumn] = value;
                 }
             }
             
@@ -673,59 +677,224 @@ namespace StudentID {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string StudentID {
                 get {
-                    return ((string)(this[this.tableGrade.StudentIDColumn]));
+                    try {
+                        return ((string)(this[this.tableStudentInfo.StudentIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StudentID\' in table \'StudentInfo\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableGrade.StudentIDColumn] = value;
+                    this[this.tableStudentInfo.StudentIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCourses_1Null() {
-                return this.IsNull(this.tableGrade.Courses_1Column);
+            public string StudentName {
+                get {
+                    try {
+                        return ((string)(this[this.tableStudentInfo.StudentNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StudentName\' in table \'StudentInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentInfo.StudentNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCourses_1Null() {
-                this[this.tableGrade.Courses_1Column] = global::System.Convert.DBNull;
+            public string Major {
+                get {
+                    try {
+                        return ((string)(this[this.tableStudentInfo.MajorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Major\' in table \'StudentInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentInfo.MajorColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCourses_2Null() {
-                return this.IsNull(this.tableGrade.Courses_2Column);
+            public int Course1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableStudentInfo.Course1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Course1\' in table \'StudentInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentInfo.Course1Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCourses_2Null() {
-                this[this.tableGrade.Courses_2Column] = global::System.Convert.DBNull;
+            public int Course_2 {
+                get {
+                    try {
+                        return ((int)(this[this.tableStudentInfo.Course_2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Course 2\' in table \'StudentInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentInfo.Course_2Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCourses_3Null() {
-                return this.IsNull(this.tableGrade.Courses_3Column);
+            public int Course_3 {
+                get {
+                    try {
+                        return ((int)(this[this.tableStudentInfo.Course_3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Course 3\' in table \'StudentInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentInfo.Course_3Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCourses_3Null() {
-                this[this.tableGrade.Courses_3Column] = global::System.Convert.DBNull;
+            public int Course_4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableStudentInfo.Course_4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Course 4\' in table \'StudentInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentInfo.Course_4Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCourses_4Null() {
-                return this.IsNull(this.tableGrade.Courses_4Column);
+            public double Average {
+                get {
+                    try {
+                        return ((double)(this[this.tableStudentInfo.AverageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Average\' in table \'StudentInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentInfo.AverageColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCourses_4Null() {
-                this[this.tableGrade.Courses_4Column] = global::System.Convert.DBNull;
+            public bool IsStudentIDNull() {
+                return this.IsNull(this.tableStudentInfo.StudentIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStudentIDNull() {
+                this[this.tableStudentInfo.StudentIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStudentNameNull() {
+                return this.IsNull(this.tableStudentInfo.StudentNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStudentNameNull() {
+                this[this.tableStudentInfo.StudentNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMajorNull() {
+                return this.IsNull(this.tableStudentInfo.MajorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMajorNull() {
+                this[this.tableStudentInfo.MajorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCourse1Null() {
+                return this.IsNull(this.tableStudentInfo.Course1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCourse1Null() {
+                this[this.tableStudentInfo.Course1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCourse_2Null() {
+                return this.IsNull(this.tableStudentInfo.Course_2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCourse_2Null() {
+                this[this.tableStudentInfo.Course_2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCourse_3Null() {
+                return this.IsNull(this.tableStudentInfo.Course_3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCourse_3Null() {
+                this[this.tableStudentInfo.Course_3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCourse_4Null() {
+                return this.IsNull(this.tableStudentInfo.Course_4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCourse_4Null() {
+                this[this.tableStudentInfo.Course_4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAverageNull() {
+                return this.IsNull(this.tableStudentInfo.AverageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAverageNull() {
+                this[this.tableStudentInfo.AverageColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -733,22 +902,22 @@ namespace StudentID {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class GradeRowChangeEvent : global::System.EventArgs {
+        public class StudentInfoRowChangeEvent : global::System.EventArgs {
             
-            private GradeRow eventRow;
+            private StudentInfoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GradeRowChangeEvent(GradeRow row, global::System.Data.DataRowAction action) {
+            public StudentInfoRowChangeEvent(StudentInfoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GradeRow Row {
+            public StudentInfoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -776,7 +945,7 @@ namespace StudentID.studentDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GradeTableAdapter : global::System.ComponentModel.Component {
+    public partial class StudentInfoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -790,7 +959,7 @@ namespace StudentID.studentDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public GradeTableAdapter() {
+        public StudentInfoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -887,54 +1056,80 @@ namespace StudentID.studentDataSet1TableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Grade";
-            tableMapping.ColumnMappings.Add("Courses 1", "Courses 1");
-            tableMapping.ColumnMappings.Add("Courses 2", "Courses 2");
-            tableMapping.ColumnMappings.Add("Courses 3", "Courses 3");
-            tableMapping.ColumnMappings.Add("Courses 4", "Courses 4");
+            tableMapping.DataSetTable = "StudentInfo";
+            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("StudentID", "StudentID");
+            tableMapping.ColumnMappings.Add("StudentName", "StudentName");
+            tableMapping.ColumnMappings.Add("Major", "Major");
+            tableMapping.ColumnMappings.Add("Course1", "Course1");
+            tableMapping.ColumnMappings.Add("Course 2", "Course 2");
+            tableMapping.ColumnMappings.Add("Course 3", "Course 3");
+            tableMapping.ColumnMappings.Add("Course 4", "Course 4");
+            tableMapping.ColumnMappings.Add("Average", "Average");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Grade` WHERE (((? = 1 AND `Courses 1` IS NULL) OR (`Courses 1` = ?)) AND ((? = 1 AND `Courses 2` IS NULL) OR (`Courses 2` = ?)) AND ((? = 1 AND `Courses 3` IS NULL) OR (`Courses 3` = ?)) AND ((? = 1 AND `Courses 4` IS NULL) OR (`Courses 4` = ?)) AND (`StudentID` = ?))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `StudentInfo` WHERE ((`ID` = ?) AND ((? = 1 AND `StudentID` IS NULL) OR (`StudentID` = ?)) AND ((? = 1 AND `StudentName` IS NULL) OR (`StudentName` = ?)) AND ((? = 1 AND `Major` IS NULL) OR (`Major` = ?)) AND ((? = 1 AND `Course1` IS NULL) OR (`Course1` = ?)) AND ((? = 1 AND `Course 2` IS NULL) OR (`Course 2` = ?)) AND ((? = 1 AND `Course 3` IS NULL) OR (`Course 3` = ?)) AND ((? = 1 AND `Course 4` IS NULL) OR (`Course 4` = ?)) AND ((? = 1 AND `Average` IS NULL) OR (`Average` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Courses_1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 1", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Courses_1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 1", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Courses_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 2", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Courses_2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 2", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Courses_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 3", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Courses_3", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 3", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Courses_4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 4", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Courses_4", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 4", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StudentID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StudentID", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StudentName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StudentName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Major", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Major", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Major", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Major", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Course1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course1", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Course1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course1", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Course_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 2", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Course_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 2", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Course_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 3", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Course_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 3", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Course_4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 4", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Course_4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 4", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Average", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Average", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Average", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Average", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Grade` (`Courses 1`, `Courses 2`, `Courses 3`, `Courses 4`, `Student" +
-                "ID`) VALUES (?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `StudentInfo` (`StudentID`, `StudentName`, `Major`, `Course1`, `Cours" +
+                "e 2`, `Course 3`, `Course 4`, `Average`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Courses_1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 1", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Courses_2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 2", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Courses_3", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 3", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Courses_4", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 4", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StudentID", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StudentName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Major", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Major", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Course1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course1", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Course_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Course_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 3", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Course_4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 4", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Average", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Average", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Grade` SET `Courses 1` = ?, `Courses 2` = ?, `Courses 3` = ?, `Courses 4` = ?, `StudentID` = ? WHERE (((? = 1 AND `Courses 1` IS NULL) OR (`Courses 1` = ?)) AND ((? = 1 AND `Courses 2` IS NULL) OR (`Courses 2` = ?)) AND ((? = 1 AND `Courses 3` IS NULL) OR (`Courses 3` = ?)) AND ((? = 1 AND `Courses 4` IS NULL) OR (`Courses 4` = ?)) AND (`StudentID` = ?))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `StudentInfo` SET `StudentID` = ?, `StudentName` = ?, `Major` = ?, `Course1` = ?, `Course 2` = ?, `Course 3` = ?, `Course 4` = ?, `Average` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `StudentID` IS NULL) OR (`StudentID` = ?)) AND ((? = 1 AND `StudentName` IS NULL) OR (`StudentName` = ?)) AND ((? = 1 AND `Major` IS NULL) OR (`Major` = ?)) AND ((? = 1 AND `Course1` IS NULL) OR (`Course1` = ?)) AND ((? = 1 AND `Course 2` IS NULL) OR (`Course 2` = ?)) AND ((? = 1 AND `Course 3` IS NULL) OR (`Course 3` = ?)) AND ((? = 1 AND `Course 4` IS NULL) OR (`Course 4` = ?)) AND ((? = 1 AND `Average` IS NULL) OR (`Average` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Courses_1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 1", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Courses_2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 2", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Courses_3", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 3", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Courses_4", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 4", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StudentID", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Courses_1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 1", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Courses_1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 1", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Courses_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 2", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Courses_2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 2", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Courses_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 3", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Courses_3", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 3", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Courses_4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 4", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Courses_4", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Courses 4", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StudentName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Major", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Major", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Course1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course1", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Course_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Course_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 3", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Course_4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 4", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Average", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Average", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StudentID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StudentID", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StudentName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StudentName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StudentName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Major", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Major", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Major", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Major", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Course1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course1", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Course1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course1", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Course_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 2", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Course_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 2", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Course_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 3", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Course_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 3", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Course_4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 4", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Course_4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Course 4", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Average", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Average", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Average", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Average", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -950,7 +1145,8 @@ namespace StudentID.studentDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [Courses 1], [Courses 2], [Courses 3], [Courses 4], StudentID FROM Grade";
+            this._commandCollection[0].CommandText = "SELECT ID, StudentID, StudentName, Major, Course1, [Course 2], [Course 3], [Cours" +
+                "e 4], Average FROM StudentInfo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -958,7 +1154,7 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(studentDataSet1.GradeDataTable dataTable) {
+        public virtual int Fill(studentDataSet1.StudentInfoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -971,9 +1167,9 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual studentDataSet1.GradeDataTable GetData() {
+        public virtual studentDataSet1.StudentInfoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            studentDataSet1.GradeDataTable dataTable = new studentDataSet1.GradeDataTable();
+            studentDataSet1.StudentInfoDataTable dataTable = new studentDataSet1.StudentInfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -981,7 +1177,7 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(studentDataSet1.GradeDataTable dataTable) {
+        public virtual int Update(studentDataSet1.StudentInfoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -989,7 +1185,7 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(studentDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Grade");
+            return this.Adapter.Update(dataSet, "StudentInfo");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1011,44 +1207,71 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Courses_1, string Original_Courses_2, string Original_Courses_3, string Original_Courses_4, string Original_StudentID) {
-            if ((Original_Courses_1 == null)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Courses_1));
-            }
-            if ((Original_Courses_2 == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Courses_2));
-            }
-            if ((Original_Courses_3 == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Courses_3));
-            }
-            if ((Original_Courses_4 == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Courses_4));
-            }
+        public virtual int Delete(int Original_ID, string Original_StudentID, string Original_StudentName, string Original_Major, global::System.Nullable<int> Original_Course1, global::System.Nullable<int> Original_Course_2, global::System.Nullable<int> Original_Course_3, global::System.Nullable<int> Original_Course_4, global::System.Nullable<double> Original_Average) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_StudentID == null)) {
-                throw new global::System.ArgumentNullException("Original_StudentID");
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_StudentID));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_StudentID));
+            }
+            if ((Original_StudentName == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_StudentName));
+            }
+            if ((Original_Major == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Major));
+            }
+            if ((Original_Course1.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Course1.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Course_2.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_Course_2.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Course_3.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Course_3.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Course_4.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_Course_4.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Average.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((double)(Original_Average.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1070,36 +1293,54 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Courses_1, string Courses_2, string Courses_3, string Courses_4, string StudentID) {
-            if ((Courses_1 == null)) {
+        public virtual int Insert(string StudentID, string StudentName, string Major, global::System.Nullable<int> Course1, global::System.Nullable<int> Course_2, global::System.Nullable<int> Course_3, global::System.Nullable<int> Course_4, global::System.Nullable<double> Average) {
+            if ((StudentID == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Courses_1));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(StudentID));
             }
-            if ((Courses_2 == null)) {
+            if ((StudentName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Courses_2));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(StudentName));
             }
-            if ((Courses_3 == null)) {
+            if ((Major == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Courses_3));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Major));
             }
-            if ((Courses_4 == null)) {
+            if ((Course1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Course1.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Courses_4));
-            }
-            if ((StudentID == null)) {
-                throw new global::System.ArgumentNullException("StudentID");
+            if ((Course_2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Course_2.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(StudentID));
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Course_3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Course_3.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Course_4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Course_4.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Average.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(Average.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1121,74 +1362,136 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Courses_1, string Courses_2, string Courses_3, string Courses_4, string StudentID, string Original_Courses_1, string Original_Courses_2, string Original_Courses_3, string Original_Courses_4, string Original_StudentID) {
-            if ((Courses_1 == null)) {
+        public virtual int Update(
+                    string StudentID, 
+                    string StudentName, 
+                    string Major, 
+                    global::System.Nullable<int> Course1, 
+                    global::System.Nullable<int> Course_2, 
+                    global::System.Nullable<int> Course_3, 
+                    global::System.Nullable<int> Course_4, 
+                    global::System.Nullable<double> Average, 
+                    int Original_ID, 
+                    string Original_StudentID, 
+                    string Original_StudentName, 
+                    string Original_Major, 
+                    global::System.Nullable<int> Original_Course1, 
+                    global::System.Nullable<int> Original_Course_2, 
+                    global::System.Nullable<int> Original_Course_3, 
+                    global::System.Nullable<int> Original_Course_4, 
+                    global::System.Nullable<double> Original_Average) {
+            if ((StudentID == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Courses_1));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(StudentID));
             }
-            if ((Courses_2 == null)) {
+            if ((StudentName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Courses_2));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(StudentName));
             }
-            if ((Courses_3 == null)) {
+            if ((Major == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Courses_3));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Major));
             }
-            if ((Courses_4 == null)) {
+            if ((Course1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Course1.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Courses_4));
-            }
-            if ((StudentID == null)) {
-                throw new global::System.ArgumentNullException("StudentID");
+            if ((Course_2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Course_2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(StudentID));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_Courses_1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+            if ((Course_3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Course_3.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Course_4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Course_4.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Courses_1));
-            }
-            if ((Original_Courses_2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((Average.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Average.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Courses_2));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_Courses_3 == null)) {
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
+            if ((Original_StudentID == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Courses_3));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_StudentID));
             }
-            if ((Original_Courses_4 == null)) {
+            if ((Original_StudentName == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Courses_4));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_StudentName));
             }
-            if ((Original_StudentID == null)) {
-                throw new global::System.ArgumentNullException("Original_StudentID");
+            if ((Original_Major == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_StudentID));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Major));
+            }
+            if ((Original_Course1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Course1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Course_2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Course_2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Course_3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_Course_3.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Course_4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_Course_4.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Average.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((double)(Original_Average.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1205,14 +1508,6 @@ namespace StudentID.studentDataSet1TableAdapters {
                 }
             }
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Courses_1, string Courses_2, string Courses_3, string Courses_4, string Original_Courses_1, string Original_Courses_2, string Original_Courses_3, string Original_Courses_4, string Original_StudentID) {
-            return this.Update(Courses_1, Courses_2, Courses_3, Courses_4, Original_StudentID, Original_Courses_1, Original_Courses_2, Original_Courses_3, Original_Courses_4, Original_StudentID);
-        }
     }
     
     /// <summary>
@@ -1227,7 +1522,7 @@ namespace StudentID.studentDataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private GradeTableAdapter _gradeTableAdapter;
+        private StudentInfoTableAdapter _studentInfoTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1249,12 +1544,12 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public GradeTableAdapter GradeTableAdapter {
+        public StudentInfoTableAdapter StudentInfoTableAdapter {
             get {
-                return this._gradeTableAdapter;
+                return this._studentInfoTableAdapter;
             }
             set {
-                this._gradeTableAdapter = value;
+                this._studentInfoTableAdapter = value;
             }
         }
         
@@ -1277,9 +1572,9 @@ namespace StudentID.studentDataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._gradeTableAdapter != null) 
-                            && (this._gradeTableAdapter.Connection != null))) {
-                    return this._gradeTableAdapter.Connection;
+                if (((this._studentInfoTableAdapter != null) 
+                            && (this._studentInfoTableAdapter.Connection != null))) {
+                    return this._studentInfoTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1294,7 +1589,7 @@ namespace StudentID.studentDataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._gradeTableAdapter != null)) {
+                if ((this._studentInfoTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1308,12 +1603,12 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(studentDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._gradeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Grade.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._studentInfoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.StudentInfo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._gradeTableAdapter.Update(updatedRows));
+                    result = (result + this._studentInfoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1327,11 +1622,11 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(studentDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._gradeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Grade.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._studentInfoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.StudentInfo.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._gradeTableAdapter.Update(addedRows));
+                    result = (result + this._studentInfoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1345,11 +1640,11 @@ namespace StudentID.studentDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(studentDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._gradeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Grade.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._studentInfoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.StudentInfo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._gradeTableAdapter.Update(deletedRows));
+                    result = (result + this._studentInfoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1392,8 +1687,8 @@ namespace StudentID.studentDataSet1TableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._gradeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._gradeTableAdapter.Connection) == false))) {
+            if (((this._studentInfoTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._studentInfoTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1429,13 +1724,13 @@ namespace StudentID.studentDataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._gradeTableAdapter != null)) {
-                    revertConnections.Add(this._gradeTableAdapter, this._gradeTableAdapter.Connection);
-                    this._gradeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._gradeTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._gradeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._gradeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._gradeTableAdapter.Adapter);
+                if ((this._studentInfoTableAdapter != null)) {
+                    revertConnections.Add(this._studentInfoTableAdapter, this._studentInfoTableAdapter.Connection);
+                    this._studentInfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._studentInfoTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._studentInfoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._studentInfoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._studentInfoTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1496,9 +1791,9 @@ namespace StudentID.studentDataSet1TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._gradeTableAdapter != null)) {
-                    this._gradeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._gradeTableAdapter]));
-                    this._gradeTableAdapter.Transaction = null;
+                if ((this._studentInfoTableAdapter != null)) {
+                    this._studentInfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._studentInfoTableAdapter]));
+                    this._studentInfoTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

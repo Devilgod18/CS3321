@@ -30,26 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentInfoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            
             this.studentInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDataSet = new StudentID.studentDataSet();
             this.add = new System.Windows.Forms.Button();
             this.studentInfoTableAdapter = new StudentID.studentDataSetTableAdapters.StudentInfoTableAdapter();
             this.studentDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentDataSet3 = new StudentID.studentDataSet3();
             this.studentInfoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.studentInfoTableAdapter1 = new StudentID.studentDataSet3TableAdapters.StudentInfoTableAdapter();
             this.studentInfoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            
+            this.studentDataSet2 = new StudentID.studentDataSet2();
+            this.studentInfoBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.studentInfoTableAdapter2 = new StudentID.studentDataSet2TableAdapters.StudentInfoTableAdapter();
+            this.gradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gradeTableAdapter = new StudentID.studentDataSet2TableAdapters.GradeTableAdapter();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.majorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource3)).BeginInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -57,19 +68,24 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
             this.studentIDDataGridViewTextBoxColumn,
             this.studentNameDataGridViewTextBoxColumn,
             this.majorDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.studentInfoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 205);
+            this.dataGridView1.DataSource = this.studentInfoBindingSource4;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 239);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(696, 271);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // studentInfoBindingSource3
+            // 
+            this.studentInfoBindingSource3.DataMember = "StudentInfo";
+            
+            // 
+            
             // 
             // studentInfoBindingSource
             // 
@@ -100,32 +116,35 @@
             this.studentDataSetBindingSource.DataSource = this.studentDataSet;
             this.studentDataSetBindingSource.Position = 0;
             // 
-            // studentDataSet3
-            // 
-            this.studentDataSet3.DataSetName = "studentDataSet3";
-            this.studentDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentInfoBindingSource1
-            // 
-            this.studentInfoBindingSource1.DataMember = "StudentInfo";
-            this.studentInfoBindingSource1.DataSource = this.studentDataSet3;
-            // 
-            // studentInfoTableAdapter1
-            // 
-            this.studentInfoTableAdapter1.ClearBeforeFill = true;
-            // 
             // studentInfoBindingSource2
             // 
             this.studentInfoBindingSource2.DataMember = "StudentInfo";
             this.studentInfoBindingSource2.DataSource = this.studentDataSetBindingSource;
             // 
-            // iDDataGridViewTextBoxColumn
+           
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 125;
+            // studentDataSet2
+            // 
+            this.studentDataSet2.DataSetName = "studentDataSet2";
+            this.studentDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentInfoBindingSource4
+            // 
+            this.studentInfoBindingSource4.DataMember = "StudentInfo";
+            this.studentInfoBindingSource4.DataSource = this.studentDataSet2;
+            // 
+            // studentInfoTableAdapter2
+            // 
+            this.studentInfoTableAdapter2.ClearBeforeFill = true;
+            // 
+            // gradeBindingSource
+            // 
+            this.gradeBindingSource.DataMember = "Grade";
+            this.gradeBindingSource.DataSource = this.studentDataSet2;
+            // 
+            // gradeTableAdapter
+            // 
+            this.gradeTableAdapter.ClearBeforeFill = true;
             // 
             // studentIDDataGridViewTextBoxColumn
             // 
@@ -162,12 +181,17 @@
             this.Text = "Student";
             this.Load += new System.EventHandler(this.Student_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource3)).EndInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,11 +204,20 @@
         private System.Windows.Forms.BindingSource studentInfoBindingSource;
         private StudentID.studentDataSetTableAdapters.StudentInfoTableAdapter studentInfoTableAdapter;
         private System.Windows.Forms.BindingSource studentDataSetBindingSource;
-        private StudentID.studentDataSet3 studentDataSet3;
+      
         private System.Windows.Forms.BindingSource studentInfoBindingSource1;
-        private StudentID.studentDataSet3TableAdapters.StudentInfoTableAdapter studentInfoTableAdapter1;
+        
         private System.Windows.Forms.BindingSource studentInfoBindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        
+        private System.Windows.Forms.BindingSource studentDataSet2BindingSource;
+        
+        private System.Windows.Forms.BindingSource studentInfoBindingSource3;
+        
+        private StudentID.studentDataSet2 studentDataSet2;
+        private System.Windows.Forms.BindingSource studentInfoBindingSource4;
+        private StudentID.studentDataSet2TableAdapters.StudentInfoTableAdapter studentInfoTableAdapter2;
+        private System.Windows.Forms.BindingSource gradeBindingSource;
+        private StudentID.studentDataSet2TableAdapters.GradeTableAdapter gradeTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn majorDataGridViewTextBoxColumn;
